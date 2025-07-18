@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ibrohim" />
+    <meta
+      name="description"
+      content="Ushbu sayt ovqtlarni online buyurtma qilish uchun ishlatiladi."
+    />
+    <meta name="technology" content="technology: HTML, CSS, JS" />
+    <title>ProTech</title>
+    <!-- Font -->
+    <!-- HEAD tag ichida -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <ul id="sidebar-menu"></ul>
+    </aside>
+
+    <section class="section">
+      <header>
+        <div class="search">
+          <input type="search" placeholder="Search" />
+        </div>
+        <div class="btns">
+          <div class="dark-mode">
+            <i class="fa-solid fa-moon"></i>
+          </div>
+          <div class="notif">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <div class="backet">
+            <i class="fa-solid fa-basket-shopping"></i>
+          </div>
+          <div class="login">
+            <button>Become a seller</button>
+          </div>
+          <div class="avatar">
+            <img src="./images/avatar.png" alt="user avatar image" />
+          </div>
+        </div>
+      </header>
+    </section>
+    <div class="container">
+      <section class="main-section">
+        <p>defolt</p>
+        <p class="main-title">
+          Best Selling Electronics Products - Weekly Update.
+        </p>
+        <div class="category">
+          <ul id="category-menu"></ul>
+        </div>
+
+        <!-- Products -->
+
+        <div class="products" id="productsContainer">
+        </div>
+      </section>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

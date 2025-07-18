@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --gray-100: #f3f5f7;
+  --gray-500: #919eab;
+  --gray-600: #637381;
+  --gray-800: #212b36;
+  --black: #15141b;
+  --bg-color: #ffc831;
+  --font-title: 14px;
+  --font-main: 18px;
+  --font-weight: 400;
+  --font-weight2: 600;
+  --radius: 100px;
+  --main-padding: 10px 24px;
+  --small-padding: 6px 12px;
+  --btn-hover: 0 4px 8px #ecb92ae6;
+  --btn-shadow: 0 2px 6px #ecb92ae6;
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 10px 40px;
+  position: relative;
+  left: 16.5%;
+  top: 15%;
+}
+.section {
+  max-width: 1430px;
+  margin: 0 auto;
+  width: 100%;
+}
+.section header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.section .search input {
+  padding: var(--main-padding);
+  border-radius: var(--radius);
+  background: var(--gray-100);
+  font-weight: var(--font-weight);
+  font-size: var(--font-title);
+  margin-left: 240px;
+  border: none;
+  outline: none;
+}
+.section .search input::placeholder {
+  color: var(--gray-800);
+}
+.section .btns {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 25px;
+}
+.section .btns i {
+  font-size: var(--font-main);
+  color: var(--gray-500);
+  cursor: pointer;
+}
+.section .btns button {
+  padding: var(--main-padding);
+  border-radius: var(--radius);
+  background-color: var(--bg-color);
+  color: var(--black);
+  font-size: var(--font-title);
+  font-weight: var(--font-weight);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: var(--btn-shadow);
+}
+.section .btns button:hover {
+  color: var(--black);
+  transform: scale(1.02);
+  transition: 0.8s ease;
+  box-shadow: var(--btn-hover);
+}
+.section .avatar {
+  cursor: pointer;
+}
+.main-section .main-title {
+  font-size: var(--font-main);
+  font-weight: var(--font-weight2);
+  color: var(--gray-800);
+}
+.main-section .category ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+}
+.main-section .category ul li a {
+  padding: var(--small-padding);
+  background: var(--gray-100);
+  border-radius: var(--radius);
+  font-size: var(--font-title);
+  font-weight: var(--font-weight);
+  color: var(--gray-600);
+  cursor: pointer;
+}
+.main-section .category ul li:nth-child(1) a:nth-child(1) {
+  background: var(--black);
+  color: #ffffff;
+}
+.main-section .products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+.main-section .products .description {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+.main-section .products .prices {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 65px;
+}
+.main-section .products .prices div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.main-section .info .title {
+  font-size: 16px;
+  font-weight: var(--font-weight2);
+  color: var(--gray-800);
+}
+.main-section .info .shop-name {
+  font-size: var(--font-title);
+  font-weight: var(--font-weight);
+  color: var(--gray-600);
+}
+.main-section .prices .price {
+  font-size: var(--font-main);
+  font-weight: var(--font-weight2);
+  color: var(--bg-color);
+}
+.main-section .prices .old-price {
+  font-size: var(--font-title);
+  font-weight: var(--font-weight);
+  color: var(--gray-500);
+}
+.main-section .prices div:nth-child(2) {
+  font-weight: var(--font-weight);
+  font-size: var(--font-title);
+  color: var(--gray-600);
+}
+.main-section .add-cart {
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: var(--gray-100);
+  cursor: pointer;
+  position: relative;
+  left: 90%;
+}
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #222;
+  color: white;
+  padding-top: 20px;
+}
+/*
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background: #444;
+}
+
+.sidebar ul li i {
+  font-family: 'Material Icons';
+  font-size: 20px;
+} */

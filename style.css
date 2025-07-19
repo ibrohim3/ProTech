@@ -210,6 +210,7 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .sidebar  li:nth-child(2) {
   display: flex;
   flex-direction: column;
@@ -217,22 +218,31 @@ body {
 }
 .extra-info {
   margin-left: 40px;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.4s ease;
 }
 .extra-info div {
-  border-left: 1px solid #ffc831;
-  display: flex;
-  gap: 5px;
-  padding: 10px;
+  border-left: 1px solid var(--gray-500);
 }
+.sub-item {
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.sub-item.active {
+  color: #ffc831;
+  border-left: 3px solid #ffc831;
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
+  from { opacity: 0; transform: translateY(-15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 
-.sidebar ul li:hover {
-  background: #444;
+
+/* .sidebar ul li:hover {
+  background: var(--gray-100);
+  border-radius: var(--radius);
 } */
 
 .sidebar ul li i {

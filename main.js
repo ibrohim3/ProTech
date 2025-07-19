@@ -45,46 +45,47 @@ function generateSidebar() {
     const li = document.createElement('li');
 
     li.innerHTML = `
-    <div class="div">
-    <img src="${item.icon}" alt="">
-    <a href="${item.link}">${item.title}</a>
-    </div>
+      <div class="div">
+        <img src="${item.icon}" alt="">
+        <span>${item.title}</span>
+      </div>
     `;
-
     if (index === 1) {
       li.addEventListener('click', function (e) {
         e.preventDefault();
+    
         const existingExtra = li.querySelector('.extra-info');
+    
         if (existingExtra) {
           existingExtra.remove();
           return;
         }
-
+    
         const extra = document.createElement('div');
         extra.className = 'extra-info';
         extra.innerHTML = `
-        <div class="div">
-        Electronics
-        </div>
-          <div class="div">
-        Clothes
-        </div>
-          <div class="div">
-        Bags
-        </div>
-          <div class="div">
-        Food
-        </div>
+          <div class="sub-item">Electronics</div>
+          <div class="sub-item">Clothes</div>
+          <div class="sub-item">Bags</div>
+          <div class="sub-item">Food</div>
         `;
+    
         li.appendChild(extra);
+    
+        const subItems = extra.querySelectorAll('.sub-item');
+    
+        subItems.forEach((sub) => {
+          sub.addEventListener('click', function (e) {
+            e.stopPropagation(); 
+            subItems.forEach((el) => el.classList.remove('active'));
+            sub.classList.add('active');
+          });
+        });
       });
     }
+    
 
     sidebarContainer.appendChild(li);
-    // const div = document.querySelector('div')
-    // div.addEventListener('click', function() {
-    //   div.style = 'border-left: 5px solid #ffc831'
-    // })
   });
 }
 

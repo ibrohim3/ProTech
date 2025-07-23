@@ -9,6 +9,7 @@
       content="Ushbu sayt ovqtlarni online buyurtma qilish uchun ishlatiladi."
     />
     <meta name="technology" content="technology: HTML, CSS, JS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProTech</title>
     <!-- Font -->
     <link
@@ -30,27 +31,32 @@
   <body>
     <aside class="sidebar">
       <header>
-        <img src="./images/logo-base.png" alt="logo img">
+        <a href="#"><img src="./images/logo-base.png" alt="logo img" /></a>
         <i class="fa-solid fa-bars-staggered"></i>
       </header>
-      
+      <!-- <div class="notif2">Tovar savatga qo'shildi</div> -->
+
       <ul id="sidebar-menu"></ul>
     </aside>
 
     <section class="section">
       <header>
         <div class="search">
-          <input type="search" placeholder="Search" />
+          <input type="search" id="searchInput"  placeholder="Search" />
         </div>
         <div class="btns">
-          <div class="dark-mode">
-            <i class="fa-solid fa-moon"></i>
+          <div class="toggle-darkmode">
+            <i id="toggle-darkmode" class="fa-solid fa-moon"></i>
           </div>
           <div class="notif">
             <i class="fa-solid fa-bell"></i>
           </div>
           <div class="backet">
+            <div id="cartContainer2"></div>
             <i class="fa-solid fa-basket-shopping"></i>
+            <div class="count-bg">
+              <span class="count">0</span>
+            </div>
           </div>
           <div class="login">
             <button>Become a seller</button>
@@ -63,7 +69,7 @@
     </section>
     <div class="container">
       <section class="main-section">
-        <p>defolt</p>
+        <p class="p">Discover / Electronics</p>
         <p class="main-title">
           Best Selling Electronics Products - Weekly Update.
         </p>
@@ -74,6 +80,9 @@
         <!-- Products -->
 
         <div class="products" id="productsContainer"></div>
+        <p id="noResult" style="display: none; text-align: center; font-size: 18px; margin-top: 20px;">
+          🔍 No products found
+        </p>
       </section>
     </div>
 

@@ -9,14 +9,12 @@
       content="Ushbu sayt ovqtlarni online buyurtma qilish uchun ishlatiladi."
     />
     <meta name="technology" content="technology: HTML, CSS, JS" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProTech</title>
     <!-- Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Style CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- Icons -->
@@ -42,7 +40,7 @@
     <section class="section">
       <header>
         <div class="search">
-          <input type="search" id="searchInput"  placeholder="Search" />
+          <input type="search" id="searchInput" placeholder="Search" />
         </div>
         <div class="btns">
           <div class="toggle-darkmode">
@@ -51,11 +49,15 @@
           <div class="notif">
             <i class="fa-solid fa-bell"></i>
           </div>
+          <!-- <div id="productsContainer"></div> -->
           <div class="backet">
-            <div id="cartContainer2"></div>
-            <i class="fa-solid fa-basket-shopping"></i>
+            <div id="cartContainer2">
+              <div class="modal">
+              </div>
+            </div>
+            <i id="backet" class="fa-solid fa-basket-shopping"></i>
             <div class="count-bg">
-              <span class="count">0</span>
+              <span class="product-num"></span>
             </div>
           </div>
           <div class="login">
@@ -75,12 +77,21 @@
         </p>
         <div class="category">
           <ul id="category-menu"></ul>
+          <div id="catalog-container"></div>
         </div>
 
         <!-- Products -->
 
         <div class="products" id="productsContainer"></div>
-        <p id="noResult" style="display: none; text-align: center; font-size: 18px; margin-top: 20px;">
+        <p
+          id="noResult"
+          style="
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+          "
+        >
           🔍 No products found
         </p>
       </section>

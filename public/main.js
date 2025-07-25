@@ -175,8 +175,8 @@ const products = [
     avatar: './images/avatar.png',
     title: 'MacBook Pro 13” Big Discount',
     shopName: 'Eshop Spot',
-    price: 1.999552,
-    oldPrice: 5415,
+    price: 2000.0,
+    oldPrice: 2150,
     sold: 5,
     rating: 4.8,
     category: 'Electronics',
@@ -321,6 +321,72 @@ const products = [
     oldPrice: 45.24,
     sold: 31,
     rating: 4.6,
+    category: 'Electronics',
+  },
+  {
+    productImg: './images/img13.png',
+    avatar: './images/avatar.png',
+    title: 'Gaming PC Case – RGB Lighting',
+    shopName: 'Eshop Spot',
+    price: 1700.29,
+    oldPrice: 1900.24,
+    sold: 11,
+    rating: 4.9,
+    category: 'Electronics',
+  },
+  {
+    productImg: './images/img14.png',
+    avatar: './images/avatar.png',
+    title: '42" Smart LED Televizor – Full HD',
+    shopName: 'Eshop Spot',
+    price: 400.0,
+    oldPrice: 500.24,
+    sold: 19,
+    rating: 4.7,
+    category: 'Electronics',
+  },
+  {
+    productImg: './images/img15.png',
+    avatar: './images/avatar.png',
+    title: 'Electric Water Heater',
+    shopName: 'Eshop Max',
+    price: 39.99,
+    oldPrice: 50.24,
+    sold: 8,
+    rating: 4.7,
+    category: 'Electronics',
+  },
+  {
+    productImg: './images/img16.png',
+    avatar: './images/avatar.png',
+    title: 'Men’s Running Sneakers',
+    shopName: 'Nike Shop',
+    price: 25.99,
+    oldPrice: 30.0,
+    sold: 48,
+    rating: 4.5,
+    category: 'Clothes',
+  },
+  {
+    productImg: './images/img17.png',
+    avatar: './images/avatar.png',
+    title: 'Unisex Sports Shoes',
+    shopName: 'Clothes Shop',
+    price: 27.99,
+    oldPrice: 35.0,
+    sold: 14,
+    rating: 4.6,
+    category: 'Clothes',
+  },
+  {
+    productImg: './images/img18.png',
+    avatar: './images/avatar.png',
+    title: 'Electric Coffee Grinder',
+    shopName: 'E Shop',
+    price: 55.99,
+    oldPrice: 85.0,
+    sold: 4,
+    rating: 4.8,
     category: 'Electronics',
   },
 ];
@@ -574,5 +640,125 @@ searchInput.addEventListener('input', function () {
     noResult.style.display = 'block';
   } else {
     noResult.style.display = 'none';
+  }
+});
+
+// Register Modal
+const overlay = document.getElementById('overlay');
+const registerBtn = document.querySelector('.register-btn');
+const closeBtn = document.getElementById('modal-close');
+const registerModal = document.querySelector('.register-modal');
+registerBtn.addEventListener('click', () => {
+  overlay.style.display = 'flex';
+  registerModal.style.display = 'block';
+});
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
+
+// Inputlar
+const firstName = document.querySelector('.name');
+const lastName = document.querySelector('.last-name');
+const email = document.querySelector('.email');
+const password = document.querySelector('.password');
+const confirmPassword = document.querySelector('.confirm-password');
+const submit = document.querySelector('.submit-btn');
+
+// Message elementlar
+const msgFirst = document.querySelector('.name-msg');
+const msgLast = document.querySelector('.lastname-msg');
+const msgEmail = document.querySelector('.email-msg');
+const msgPass = document.querySelector('.pass-msg');
+const msgConfirm = document.querySelector('.confirm-msg');
+
+// Regexlar
+const nameReg = /^[A-Za-z]{2,}$/;
+const emailReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const passReg = /^(?=.*[a-zA-Z])(?=.*\d).{6,12}$/;
+
+// Submit hodisasi
+submit.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  const fName = firstName.value.trim();
+  const lName = lastName.value.trim();
+  const mail = email.value.trim();
+  const pass = password.value.trim();
+  const confirm = confirmPassword.value.trim();
+
+  let isValid = true;
+
+  // First Name
+  if (nameReg.test(fName)) {
+    firstName.style.border = '2px solid green';
+    msgFirst.textContent = '✅ Good first name';
+    msgFirst.style.color = 'green';
+  } else {
+    firstName.style.border = '2px solid red';
+    msgFirst.textContent = '❌ At least 2 letters, no numbers';
+    msgFirst.style.color = 'red';
+    isValid = false;
+  }
+
+  // Last Name
+  if (nameReg.test(lName)) {
+    lastName.style.border = '2px solid green';
+    msgLast.textContent = '✅ Good last name';
+    msgLast.style.color = 'green';
+  } else {
+    lastName.style.border = '2px solid red';
+    msgLast.textContent = '❌ At least 2 letters, no numbers';
+    msgLast.style.color = 'red';
+    isValid = false;
+  }
+
+  // Email
+  if (emailReg.test(mail)) {
+    email.style.border = '2px solid green';
+    msgEmail.textContent = '✅ Valid email';
+    msgEmail.style.color = 'green';
+  } else {
+    email.style.border = '2px solid red';
+    msgEmail.textContent = '❌ Invalid email format';
+    msgEmail.style.color = 'red';
+    isValid = false;
+  }
+
+  // Password
+  if (passReg.test(pass)) {
+    password.style.border = '2px solid green';
+    msgPass.textContent = '✅ Strong password';
+    msgPass.style.color = 'green';
+  } else {
+    password.style.border = '2px solid red';
+    msgPass.textContent = '❌ 6–12 chars, at least one letter and number';
+    msgPass.style.color = 'red';
+    isValid = false;
+  }
+
+  // Confirm Password
+  if (pass === confirm && passReg.test(confirm)) {
+    confirmPassword.style.border = '2px solid green';
+    msgConfirm.textContent = '✅ Passwords match';
+    msgConfirm.style.color = 'green';
+  } else {
+    confirmPassword.style.border = '2px solid red';
+    msgConfirm.textContent = '❌ Passwords do not match';
+    msgConfirm.style.color = 'red';
+    isValid = false;
+  }
+
+  // Barchasi to‘g‘ri bo‘lsa localStorage ga yoziladi
+  if (isValid) {
+    const user = {
+      firstName: fName,
+      lastName: lName,
+      email: mail,
+      password: pass,
+    };
+    localStorage.setItem('user', JSON.stringify(user));
+    alert('✅ Successfully registered and saved to localStorage!');
+    registerModal.style.display = 'none';
+    overlay.style.display = 'none';
   }
 });

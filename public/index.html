@@ -52,8 +52,7 @@
           <!-- <div id="productsContainer"></div> -->
           <div class="backet">
             <div id="cartContainer2">
-              <div class="modal">
-              </div>
+              <div class="modal"></div>
             </div>
             <i id="backet" class="fa-solid fa-basket-shopping"></i>
             <div class="count-bg">
@@ -61,7 +60,7 @@
             </div>
           </div>
           <div class="login">
-            <button>Become a seller</button>
+            <button class="register-btn">Become a seller</button>
           </div>
           <div class="avatar">
             <img src="./images/avatar.png" alt="user avatar image" />
@@ -96,7 +95,51 @@
         </p>
       </section>
     </div>
+    <div class="overlay" id="overlay">
+      <div class="register-modal">
+        <div class="header">
+          <h1>Register</h1>
+          <i id="modal-close" class="fas fa-times close-btn"></i>
+        </div>
+        <form class="form">
+          <div class="name-field">
+            <input type="text" class="name" placeholder="First Name" />
+            <p class="error-msg name-msg"></p>
+          </div>
 
+          <div class="last-name-field">
+            <input type="text" class="last-name" placeholder="Last Name" />
+            <p class="error-msg lastname-msg"></p>
+          </div>
+
+          <div class="email-field">
+            <input type="email" class="email" placeholder="Email Address" />
+            <p class="error-msg email-msg"></p>
+          </div>
+
+          <div class="password-field">
+            <input
+              type="password"
+              class="password"
+              placeholder="Create a Password"
+            />
+            <p class="error-msg pass-msg"></p>
+          </div>
+
+          <div class="confirm-field">
+            <input
+              type="password"
+              class="confirm-password"
+              placeholder="Confirm Password"
+            />
+            <p class="error-msg confirm-msg"></p>
+          </div>
+          <div class="submit-field">
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
